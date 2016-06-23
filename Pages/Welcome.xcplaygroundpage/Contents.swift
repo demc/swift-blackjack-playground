@@ -14,7 +14,7 @@
  - callout(Hint): Make sure to spell the suits correctly using lowercase letters.
  */
 
-let suits: [String] = ["diamonds", "hearts", "spades", "clubs"];
+let suits: [String] = ["hearts"];
 
 /*:
  ## Ranks
@@ -24,7 +24,25 @@ let suits: [String] = ["diamonds", "hearts", "spades", "clubs"];
  - callout(Hint): Make sure to spell the suits correctly using lowercase letters.
  */
 
-let ranks: [String] = ["ace", "king", "queen", "jack", "10"];
+let ranks: [String] = ["ace"];
+
+/*:
+ ## Embedded Loops
+ 
+ When we put a `for` loop inside of another `for` loop, the inner loop will execute completely before the outer loop moves to the next item. Let's see how we can use loops inside of other loops.
+ 
+ - callout(Hint): What type is `suit` and `rank`?
+ */
+
+for suit in suits
+{
+    for rank in ranks
+    {
+        // Use `print()` to print the name of each card as a human would say it.
+        // For example, print("Ace of Diamonds");
+    }
+}
+
 
 //: [Previous](@previous) | [Next](@next)
 

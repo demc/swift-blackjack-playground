@@ -6,6 +6,16 @@ public protocol Card
     var rank: String { get set }
 }
 
+public protocol Deck
+{
+    var cards: [Card] { get set }
+}
+
+public protocol Shoe
+{
+    var cards: [Card] { get set }
+}
+
 public func layoutCards(suits: [String], ranks: [String], cardWidth: Int, cardHeight: Int, container: UIView)
 {
     for (sIndex, suit) in suits.enumerate()
@@ -25,6 +35,36 @@ public func layoutCards(suits: [String], ranks: [String], cardWidth: Int, cardHe
             
             container.addSubview(imageView);
         }
+    }
+}
+
+public func layoutDeck(deck: Deck, cardWidth: Int, cardHeight: Int, container: UIView)
+{
+    var rowIndex = 0;
+    
+    for (index, card) in deck.cards.enumerate()
+    {
+        let columnIndex = index % 4;
+        
+        if index > 3 && columnIndex == 0
+        {
+            rowIndex = rowIndex + 1;
+        }
+        
+        let name = "\(card.rank)_of_\(card.suit)";
+        let image = UIImage(named: name);
+        print(name);
+        let xPadding = 10 + columnIndex * 10;
+        let yPadding = 10 + rowIndex * 10;
+            
+        let frame = CGRect(x: cardWidth * columnIndex + xPadding, y: cardHeight * rowIndex + yPadding, width: cardWidth, height: cardHeight);
+        let imageView = UIImageView(frame: frame);
+            
+        imageView.image = image;
+            
+        container.addSubview(imageView);
+        
+
     }
 }
 
