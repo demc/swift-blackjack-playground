@@ -70,9 +70,9 @@ for suit in suits
  */
 import UIKit;
 import XCPlayground;
-var view = UIView(frame: CGRect(origin: CGPointZero, size: CGSize(width: 450, height: 1895)));
-view.backgroundColor = UIColor.lightGrayColor();
+var view = UIView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 450, height: 1895)));
+view.backgroundColor = UIColor.lightGray;
 
-layoutCards(suits, ranks: ranks, cardWidth: 100, cardHeight: 145, container: view);
+layoutCards(suits: suits, ranks: ranks, cardWidth: 100, cardHeight: 145, container: view);
 
 XCPlaygroundPage.currentPage.liveView = view;

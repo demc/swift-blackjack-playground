@@ -5,13 +5,16 @@
  
  To play Blackjack, we need a way to represent a deck of cards. We will use a class for that as well.
 
- - callout(Add this): Add an initalizer to this class. What will the `init()` input variables be?
+ - callout(Add this): Fix this initializer.
  */
 class BlackjackDeck: Deck
 {
-    var cards: [Card];
+    var cards: [Card] = [];
  
-    // Put init() here
+    init(cards: [Card])
+    {
+      // FIXME: How do you set the cards property using the cards paramter?
+    }
 }
 
 /*:
@@ -21,14 +24,16 @@ class BlackjackDeck: Deck
  
  Use the suits array, ranks array, and embedded `for` loops on the first page of this lesson to see how to make every combination of card necessary to make a deck.
 
-  - Important: A standard deck of cards has 4 suits, 13 ranks, and 52 cards.
-  - callout(Add this): Go back to the previous page and copy your `BlackjackCard` class to the lines below.
+  * Important: A standard deck of cards has 4 suits, 13 ranks, and 52 cards.
+ 
+ 
+  * Callout(Add this): Go back to the previous page and copy your `BlackjackCard` class to the lines below.
  */
-// Paste BlackjackCard classhere
+// FIXME: Paste BlackjackCard class here
 
-// Paste suits array here
+// FIXME: Paste suits array here
 
-// Paste ranks array here
+// FIXME: Paste ranks array here
 
 var cards: [Card] = [];
 
@@ -36,7 +41,9 @@ for suit in suits
 {
     for rank in ranks
     {
-        // Fill the cards array with BlackjackCard types
+      // FIXME:
+      // 1. Create a card object using the BlackjackCard class. Make sure to the initializer to set the rank and suit of the card.
+      // 2. Append the card object to the cards array
     }
 }
 
@@ -67,9 +74,9 @@ var deck = BlackjackDeck(cards: cards);
  */
 import UIKit;
 import XCPlayground;
-var view = UIView(frame: CGRect(origin: CGPointZero, size: CGSize(width: 450, height: 1895)));
-view.backgroundColor = UIColor.lightGrayColor();
+var view = UIView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 450, height: 1895)));
+view.backgroundColor = UIColor.lightGray;
 
-layoutDeck(deck, cardWidth: 100, cardHeight: 145, container: view);
+layoutDeck(deck: deck, cardWidth: 100, cardHeight: 145, container: view);
 
 XCPlaygroundPage.currentPage.liveView = view;

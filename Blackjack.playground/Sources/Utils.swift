@@ -18,9 +18,9 @@ public protocol Shoe
 
 public func layoutCards(suits: [String], ranks: [String], cardWidth: Int, cardHeight: Int, container: UIView)
 {
-    for (sIndex, suit) in suits.enumerate()
+    for (sIndex, suit) in suits.enumerated()
     {
-        for (rIndex, rank) in ranks.enumerate()
+        for (rIndex, rank) in ranks.enumerated()
         {
             let name = "\(rank)_of_\(suit)";
             let image = UIImage(named: name);
@@ -40,9 +40,9 @@ public func layoutCards(suits: [String], ranks: [String], cardWidth: Int, cardHe
 
 public func layoutDeck(deck: Deck, cardWidth: Int, cardHeight: Int, container: UIView)
 {
-    var rowIndex = 0;
+  var rowIndex = 0;
     
-    for (index, card) in deck.cards.enumerate()
+    for (index, card) in deck.cards.enumerated()
     {
         let columnIndex = index % 4;
         

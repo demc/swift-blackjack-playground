@@ -56,7 +56,7 @@ class Player
 //: - Important: Notice that `init()` does not use the `func` keyword like other functions we've seen before.
 var bobby = Player(name: "Little Bobby Tables");
 
-//: - callout(Add this): Add an `init` function to `BlackjackCard.
+//: - callout(Add this): Add an `init` function to `BlackjackCard. The `init()` function should have two parameters, `suit` and `rank`. These parameters should use the same data type as the properties `suit` and `rank`. Use the parameters to set the values of the properties.
 
 
 
@@ -87,10 +87,10 @@ var bobby = Player(name: "Little Bobby Tables");
  */
 import UIKit;
 import XCPlayground;
-var view = UIView(frame: CGRect(origin: CGPointZero, size: CGSize(width: 450, height: 1895)));
-view.backgroundColor = UIColor.lightGrayColor();
+var view = UIView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 450, height: 1895)));
+view.backgroundColor = UIColor.lightGray;
 
-layoutCard(twoOfHearts, cardWidth: 100, cardHeight: 145, container: view);
+layoutCard(card: twoOfHearts, cardWidth: 100, cardHeight: 145, container: view);
 
 XCPlaygroundPage.currentPage.liveView = view;
 //: [Next](@next)
